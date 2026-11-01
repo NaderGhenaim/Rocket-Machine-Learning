@@ -2,7 +2,10 @@ import gymnasium as gym
 from stable_baselines3 import PPO
 
 # create  environment
-env = gym.make("LunarLander-v3", render_mode="human")
+# env = gym.make("LunarLander-v3", render_mode="human")
+
+# training without rendering environment (faster training)
+env = gym.make("LunarLander-v3")
 
 # initialize the PPO model (reinforcement learning) with a standard small neural network
 model = PPO("MlpPolicy", env, verbose=1)
